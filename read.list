@@ -1,4 +1,4 @@
 web/index.html
-web/scripts/test.ico
-web/scripts/test.sh
+web/scripts/*.ico
+web/scripts/*.sh
 web/login.html
