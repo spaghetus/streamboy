@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cat head.html
+
+for script in $(ls ./scripts/*.sh); do
+	SCRIPT=$script
+	ICON=$(dirname $script)/$(basename $script .sh).ico
+	echo "
+	<a href=\"$SCRIPT\"><img src=\"$ICON\" alt=\"Icon to run $SCRIPT\" width=64 height=64/></a>
+	"
+done
+
+>&2 echo "header Content-Type text/html"
+>&2 echo "status 200"
+
+cat tail.html

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ $REQUESTED == *".sh" ]] && [[ $HEADER_Location == "" ]]; then
+>&2 echo "status 302"
+>&2 echo "header Location /"
+else
+cat /dev/stdin
+>&2 echo "status $STATUS"
+fi

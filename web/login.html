@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [[ "$HEADER_authorization" == "" ]]; then
+	>&2 echo status 401
+	>&2 echo header WWW-Authenticate Basic
+	echo "Input the streamboy secret"
+elif [[ "$HEADER_authorization" == "Basic $(echo $SECRET | base64 | sed s/K/=/)" ]]; then
+	echo "OK"
+	>&2 echo status 302
+	>&2 echo header Location /
+else
+	echo "Bad login"
+	>&2 echo status 401
+	>&2 echo header WWW-Authenticate Basic
+fi

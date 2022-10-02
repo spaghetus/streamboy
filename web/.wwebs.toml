@@ -1,0 +1,5 @@
+[env]
+SECRET = "wario:ChangeMePlease"
+
+[resolution]
+index = "index.html"

@@ -1,0 +1,5 @@
+web/scripts/test.sh
+web/scripts/.res_transformer-1-redir
+web/index.html
+web/scripts/.gatekeeper-require-secret
+web/login.html
