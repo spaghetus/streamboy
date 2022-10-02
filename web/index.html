@@ -2,6 +2,10 @@
 
 cat head.html
 
+if [[ "$HEADER_authorization" == "" ]]; then
+	echo "<a href=./index.html>Log in</a><br>"
+fi
+
 for script in $(ls ./scripts/*.sh); do
 	SCRIPT=$script
 	ICON=$(dirname $script)/$(basename $script .sh).ico
